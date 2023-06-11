@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TineMCEDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ejl="clr-namespace:HybridWebView;assembly=HybridWebView"
+    Title="My Main Page">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="0,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+
+
+
+            <ejl:HybridWebView
+                x:Name="myHybridWebView"
+                HybridAssetRoot="hybrid_root"
+                RawMessageReceived="OnHybridWebViewRawMessageReceived" />
+
+            <Entry
+                x:Name="DescriptionHiddenEntry"
+                IsVisible="False"
+                Text="{Binding MyDescription}" />
+
+
+
+
+            <Image
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="dotnet_bot.png" />
+
+            <Label
+                FontSize="32"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Text="{Binding MyDescription}" />
+
+            <Label
+                FontSize="18"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level2"
+                Text="Welcome to .NET Multi-platform App UI" />
+
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Click me" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
